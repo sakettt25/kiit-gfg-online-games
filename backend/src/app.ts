@@ -3,7 +3,7 @@ import { config } from 'dotenv';
 import connectDB from './configs/db';
 import cors from 'cors';
 import login from './routes/login_route';
-import signup from './controllers/signup_controller';
+import signup from './routes/signup_route';
 
 config();
 
