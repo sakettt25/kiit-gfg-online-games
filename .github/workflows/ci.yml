@@ -3,7 +3,7 @@ name: CI Pipeline
 on:
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   build:
@@ -24,6 +24,8 @@ jobs:
 
       - name: Build backend
         working-directory: ./backend
+        env:
+          DB_URL: ${{ secrets.DB_URL }}
         run: npm run build
 
       - name: Install frontend dependencies
@@ -36,6 +38,8 @@ jobs:
 
       - name: Test backend server start
         working-directory: ./backend
+        env:
+          DB_URL: ${{ secrets.DB_URL }}
         run: |
           npm run dev &
           sleep 10 # Wait for the server to start
