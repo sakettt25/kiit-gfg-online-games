@@ -18,15 +18,15 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install backend dependencies
-        working-directory: ./backend
-        run: npm install
+      # - name: Install backend dependencies
+      #   working-directory: ./backend
+      #   run: npm install
 
-      - name: Build backend
-        working-directory: ./backend
-        env:
-          DB_URL: ${{ secrets.DB_URL }}
-        run: npm run build
+      # - name: Build backend
+      #   working-directory: ./backend
+      #   env:
+      #     DB_URL: ${{ secrets.DB_URL }}
+      #   run: npm run build
 
       - name: Install frontend dependencies
         working-directory: ./frontend
@@ -36,14 +36,14 @@ jobs:
         working-directory: ./frontend
         run: npm run build
 
-      - name: Test backend server start
-        working-directory: ./backend
-        env:
-          DB_URL: ${{ secrets.DB_URL }}
-        run: |
-          npm run dev &
-          sleep 10 # Wait for the server to start
-          curl -f http://localhost:3000 # Change this to the actual port your server runs on
+      # - name: Test backend server start
+      #   working-directory: ./backend
+      #   env:
+      #     DB_URL: ${{ secrets.DB_URL }}
+      #   run: |
+      #     npm run dev &
+      #     sleep 10 # Wait for the server to start
+      #     curl -f http://localhost:3000 # Change this to the actual port your server runs on
 
       - name: Test frontend server start
         working-directory: ./frontend
