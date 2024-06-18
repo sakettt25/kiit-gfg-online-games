@@ -3,6 +3,7 @@ import { config } from 'dotenv';
 import connectDB from './configs/db';
 import cors from 'cors';
 import login from './routes/login_route';
+import signup from './controllers/signup_controller';
 
 config();
 
@@ -15,11 +16,12 @@ app.use(express.json());
 
 // define all routes here
 app.use("/api/login",login)
-app.use("/api/signup",login)
+app.use("/api/signup",signup)
 
 app.all("*", (_req, _res) => {
   _res.status(404).send("Page Not Found");
 });
+
 
 
 async function startServer() {
