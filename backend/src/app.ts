@@ -1,23 +1,32 @@
+import express from 'express';
+import { config } from 'dotenv';
+import connectDB from './configs/db';
+import cors from 'cors';
+import login from './routes/login_route';
 
-// this is the main server file
-const express = require('express');
-const mongoose = require('mongoose');
-
-const cors = require('cors');
-const app = express();
-
-app.use(cors());
-app.use(express.json());
-
-app.get('/', (req, res) => res.send('Hello World!, This was created using Express CLI'));
-
-const dbURI = process.env.DB_URI || 'mongodb://localhost:27017/myapp';
-mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('Database connected'))
-  .catch(err => console.log('Database connection error:', err));
+config();
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-  console.log(`http://localhost:${PORT}`);
+
+const app = express();
+const corsOptions = { origin: '*', optionsSuccessStatus: 200};
+app.use(cors(corsOptions));
+app.use(express.json());
+
+// define all routes here
+app.use("/api/login",login)
+app.use("/api/signup",login)
+
+app.all("*", (_req, _res) => {
+  _res.status(404).send("Page Not Found");
 });
+
+
+async function startServer() {
+  await connectDB();
+  app.listen(PORT, () => {
+      console.log(`Server is running on port ${PORT}`);
+      console.log(`http://localhost:${PORT}`);
+  });
+}
+startServer();
