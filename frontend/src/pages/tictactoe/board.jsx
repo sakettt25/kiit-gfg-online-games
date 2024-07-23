@@ -3,7 +3,13 @@ import Square from "./square";
 function Board() {
     const [squares, setSquare] = useState(Array(9).fill(null))
     const [turn, changeTurn] = useState(1);
+    const [winState,declareWinner] = useState(0);
     function handleClick(i) {
+        if(winState != 0 || turn > 9 || squares[i] != null)
+        {
+            return 0;
+        }
+
         const nextSquares = squares.slice();
         if(turn % 2 == 1)
             nextSquares[i] = 'X';
