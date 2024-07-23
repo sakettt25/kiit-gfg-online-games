@@ -2,9 +2,15 @@ import { useState } from "react";
 import Square from "./square";
 function Board() {
     const [squares, setSquare] = useState(Array(9).fill(null))
+    const [turn, changeTurn] = useState(1);
     function handleClick(i) {
         const nextSquares = squares.slice();
-        nextSquares[i] = 'X';
+        if(turn % 2 == 1)
+            nextSquares[i] = 'X';
+        else
+            nextSquares[i] = 'O';
+
+        changeTurn(turn + 1);
         setSquare(nextSquares);
     }
 
