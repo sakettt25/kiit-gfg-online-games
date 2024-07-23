@@ -1,20 +1,26 @@
 import { useState } from "react";
 import Square from "./square";
 function Board() {
-    const [squares, setSquare] = useState(Array(9).fill(null))
+
+    const [squares, setSquare] = useState(Array(3).fill(Array(3).fill(null)));
+
+
     const [turn, changeTurn] = useState(1);
     const [winState,declareWinner] = useState(0);
-    function handleClick(i) {
-        if(winState != 0 || turn > 9 || squares[i] != null)
+    function handleClick(i,j) {
+        if(winState != 0 || turn > 9 || squares[i][j] != null)
         {
             return 0;
         }
+        
+        //the JSON.parse technique is froom gemini AI
+        const nextSquares = JSON.parse(JSON.stringify(squares));
 
-        const nextSquares = squares.slice();
+
         if(turn % 2 == 1)
-            nextSquares[i] = 'X';
+            nextSquares[i][j] = 'X';
         else
-            nextSquares[i] = 'O';
+            nextSquares[i][j] = 'O';
 
         changeTurn(turn + 1);
         setSquare(nextSquares);
@@ -22,20 +28,20 @@ function Board() {
 
     return (<div className="board">
         <div className="row">
-            <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
-            <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
-            <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
+            <Square value={squares[0][0]} onSquareClick={() => handleClick(0,0)} />
+            <Square value={squares[0][1]} onSquareClick={() => handleClick(0,1)} />
+            <Square value={squares[0][2]} onSquareClick={() => handleClick(0,2)} />
 
         </div>
         <div className="row">
-            <Square value={squares[3]} onSquareClick={() => handleClick(3)} />
-            <Square value={squares[4]} onSquareClick={() => handleClick(4)} />
-            <Square value={squares[5]} onSquareClick={() => handleClick(5)} />
+            <Square value={squares[1][0]} onSquareClick={() => handleClick(1,0)} />
+            <Square value={squares[1][1]} onSquareClick={() => handleClick(1,1)} />
+            <Square value={squares[1][2]} onSquareClick={() => handleClick(1,2)} />
         </div>
         <div className="row">
-            <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
-            <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
-            <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
+            <Square value={squares[2][0]} onSquareClick={() => handleClick(2,0)} />
+            <Square value={squares[2][1]} onSquareClick={() => handleClick(2,1)} />
+            <Square value={squares[2][2]} onSquareClick={() => handleClick(2,2)} />
 
         </div>
     </div>);
