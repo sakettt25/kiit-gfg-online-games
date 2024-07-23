@@ -13,7 +13,7 @@ function Board() {
             return 0;
         }
 
-        //the JSON.parse technique is froom gemini AI
+        //the JSON.parse technique is from gemini AI
         const nextSquares = JSON.parse(JSON.stringify(squares));
 
 
@@ -21,11 +21,41 @@ function Board() {
             nextSquares[i][j] = 'X';
         else
             nextSquares[i][j] = 'O';
+        setSquare(nextSquares);
 
+        let result = checkWin(i, j, nextSquares);
+        if (result != 0) {
+            setMessage(nextSquares[i][j] + " is the winner.");
+            declareWinner(nextSquares[i][j]);
+            return 0;
+        }
 
         setMessage("Turn of " + ((turn + 1) % 2 == 1 ? "X" : "O"));
         changeTurn(turn + 1);
-        setSquare(nextSquares);
+
+    }
+
+    function checkWin(row, col, grid) {
+        const currentPlayer = grid[row][col];
+        let rowFlag = 1;
+        let colFlag = 1;
+        let d1Flag = 1;
+        let d2Flag = 1;
+        for (let i = 0; i < 3; i++) {
+            if (grid[row][i] != currentPlayer)
+                rowFlag = 0;
+            if (grid[i][col] != currentPlayer)
+                colFlag = 0;
+            if (grid[i][i] != currentPlayer)
+                d1Flag = 0;
+            if (grid[i][2 - i] != currentPlayer)
+                d2Flag = 0;
+        }
+
+        if (rowFlag == 1 || colFlag == 1 || d1Flag == 1 || d2Flag == 1)
+            return currentPlayer;
+        else
+            return 0;
     }
 
     return (<div className="board">
