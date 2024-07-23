@@ -32,7 +32,8 @@ function Board() {
 
         setMessage("Turn of " + ((turn + 1) % 2 == 1 ? "X" : "O"));
         changeTurn(turn + 1);
-
+        if (turn == 9 && winState == 0)
+            setMessage("Draw");
     }
 
     function checkWin(row, col, grid) {
