@@ -1,5 +1,7 @@
 
-function Square(){
-    return <div className="square">X</div>
+function Square({value}){
+   
+    return <div className="square" >{value}</div>
 }
+
 export default Square
