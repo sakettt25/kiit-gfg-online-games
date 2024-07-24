@@ -65,26 +65,30 @@ function Board() {
         declareWinner(0);
     }
 
-    return (<div className="board">
+    return (<div className="tictactoe">
         <div className="prompt-box">{message} </div>
-        <div className="row">
-            <Square value={squares[0][0]} onSquareClick={() => handleClick(0, 0)} />
-            <Square value={squares[0][1]} onSquareClick={() => handleClick(0, 1)} />
-            <Square value={squares[0][2]} onSquareClick={() => handleClick(0, 2)} />
+        <div className="board">
+
+            <div className="row">
+                <Square value={squares[0][0]} onSquareClick={() => handleClick(0, 0)} />
+                <Square value={squares[0][1]} onSquareClick={() => handleClick(0, 1)} />
+                <Square value={squares[0][2]} onSquareClick={() => handleClick(0, 2)} />
+
+            </div>
+            <div className="row">
+                <Square value={squares[1][0]} onSquareClick={() => handleClick(1, 0)} />
+                <Square value={squares[1][1]} onSquareClick={() => handleClick(1, 1)} />
+                <Square value={squares[1][2]} onSquareClick={() => handleClick(1, 2)} />
+            </div>
+            <div className="row">
+                <Square value={squares[2][0]} onSquareClick={() => handleClick(2, 0)} />
+                <Square value={squares[2][1]} onSquareClick={() => handleClick(2, 1)} />
+                <Square value={squares[2][2]} onSquareClick={() => handleClick(2, 2)} />
+
+            </div>
 
         </div>
-        <div className="row">
-            <Square value={squares[1][0]} onSquareClick={() => handleClick(1, 0)} />
-            <Square value={squares[1][1]} onSquareClick={() => handleClick(1, 1)} />
-            <Square value={squares[1][2]} onSquareClick={() => handleClick(1, 2)} />
-        </div>
-        <div className="row">
-            <Square value={squares[2][0]} onSquareClick={() => handleClick(2, 0)} />
-            <Square value={squares[2][1]} onSquareClick={() => handleClick(2, 1)} />
-            <Square value={squares[2][2]} onSquareClick={() => handleClick(2, 2)} />
-
-        </div>
-        <button onClick={() => resetGame()}>Reset</button>
+        <img className="resetButton" onClick={() => resetGame()} src="src/assets/restart icon.png"></img>
     </div>);
 }
 export default Board

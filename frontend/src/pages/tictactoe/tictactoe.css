@@ -1,10 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-
+.tictactoe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
 
 .board {
     background-color: hsla(189, 84%, 81%, 0.997);
-    margin: 50px;
+    margin: 10px;
     padding: 30px;
     width: 150px;
     border-radius: 20px;
@@ -26,28 +30,40 @@
     font-size: large;
 }
 
-.board .square:hover{
+.board .square:hover {
     background-color: white;
 }
 
 .board .square-img {
     margin: 2px;
     width: 45px;
-    height: 45      px;
+    height: 45 px;
 }
 
-.board .prompt-box {
+ .prompt-box {
     box-sizing: border-box;
-    background-color: white;
+    border: 5px solid hsla(189, 84%, 81%, 0.997);
     border-radius: 14px;
     padding: 10px;
-    width: 100%;
+    width: fit-content;
     height: auto;
     margin: 2px;
-    margin-bottom: 15px;
 
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+}
+
+.resetButton{ 
+    border: none;
+    box-sizing: border-box;
+    background-color: hsla(189, 84%, 81%, 0.997);
+    width: 45px;
+    height: auto;
+    border-radius: 25px;
+    margin-top: 30px;
+}
+.resetButton:hover{
+    background-color: hsla(189, 84%, 81%, 0.713);
 }
