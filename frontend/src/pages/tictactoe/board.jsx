@@ -3,11 +3,10 @@ import Square from "./square";
 function Board() {
 
     const [squares, setSquare] = useState(Array(3).fill(Array(3).fill(null)));
-
-
     const [turn, changeTurn] = useState(1);
     const [winState, declareWinner] = useState(0);
     const [message, setMessage] = useState("Turn of X");
+
     function handleClick(i, j) {
         if (winState != 0 || turn > 9 || squares[i][j] != null) {
             return 0;
@@ -59,6 +58,13 @@ function Board() {
             return 0;
     }
 
+    function resetGame() {
+        setSquare(Array(3).fill(Array(3).fill(null)));
+        changeTurn(1);
+        setMessage("Turn of X");
+        declareWinner(0);
+    }
+
     return (<div className="board">
         <div className="prompt-box">{message} </div>
         <div className="row">
@@ -78,6 +84,7 @@ function Board() {
             <Square value={squares[2][2]} onSquareClick={() => handleClick(2, 2)} />
 
         </div>
+        <button onClick={() => resetGame()}>Reset</button>
     </div>);
 }
 export default Board
