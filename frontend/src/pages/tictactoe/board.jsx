@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Square from "./square";
+import ResetButton from "./resetButton";
 function Board() {
 
     const [squares, setSquare] = useState(Array(3).fill(Array(3).fill(null)));
@@ -88,7 +89,7 @@ function Board() {
             </div>
 
         </div>
-        <img className="resetButton" onClick={() => resetGame()} src="src/assets/restart icon.png"></img>
+        <ResetButton src={"src/assets/restart icon.png"} alt={"reset"} onClick={() => resetGame()} />
     </div>);
 }
 export default Board
