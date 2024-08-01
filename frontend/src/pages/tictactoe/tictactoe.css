@@ -40,10 +40,8 @@
     border-radius: 25px;
     padding: 10px;
     margin: 2px;
-    font-weight: bolder;
     width: 17px;
     height: 17px;
-    font-size: large;
 }
 
 .board .square:hover {
