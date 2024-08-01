@@ -28,8 +28,8 @@
 .board {
     background-color: hsla(189, 84%, 81%, 0.997);
     margin: 10px;
-    padding: 30px;
-    width: 270px;
+    padding: 20px;
+    width: 400px;
     aspect-ratio: 1;
     border-radius: 20px;
 }
