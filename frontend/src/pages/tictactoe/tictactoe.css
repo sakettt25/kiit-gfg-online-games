@@ -55,34 +55,3 @@
     font-style: normal;
 }
 
-.resetButton,
-.spin-resetButton {
-    border: none;
-    box-sizing: border-box;
-    background-color: hsla(189, 84%, 81%, 0.997);
-    width: 45px;
-    height: auto;
-    border-radius: 25px;
-    margin-top: 30px;
-}
-
-/* Ai generated code for spinning */
-.spin-resetButton  {
-    animation: spin 0.3s linear infinite reverse; /* Faster spin and reversed direction */
-  }
-
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-/* Ai generated code ends */
-
-
-.resetButton:hover {
-    background-color: hsla(189, 84%, 81%, 0.713);
-}

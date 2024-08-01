@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styles from './resetButton.module.css';
 //ai generated code :
 const ResetButton = ({ src, alt, onClick }) => {
   const [isSpinning, setIsSpinning] = useState(false);
@@ -13,9 +14,9 @@ const ResetButton = ({ src, alt, onClick }) => {
     <img
       src={src}
       alt={alt}
-      className={isSpinning ? 'spin-resetButton' : 'resetButton'}
+      className={isSpinning ? styles.spinResetButton : styles.resetButton}
       onClick={handleClick}
-      style={{ cursor: 'pointer' }} // Optional: Set cursor to pointer on hover
+      style={{ cursor: 'pointer', styles }} // Optional: Set cursor to pointer on hover
     />
   );
 };

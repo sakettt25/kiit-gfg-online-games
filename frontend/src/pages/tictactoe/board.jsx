@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Square from "./square";
-import ResetButton from "./resetButton";
+import ResetButton from "./resetButton/resetButton";
 function Board() {
 
     const [squares, setSquare] = useState(Array(3).fill(Array(3).fill(null)));
