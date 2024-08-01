@@ -6,6 +6,22 @@
     align-items: center;
 }
 
+.prompt-box {
+    box-sizing: border-box;
+    border: 5px solid hsla(189, 84%, 81%, 0.997);
+    border-radius: 14px;
+    padding: 10px;
+    width: fit-content;
+    height: auto;
+    margin: 2px;
+
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
 .board {
     background-color: hsla(189, 84%, 81%, 0.997);
     margin: 10px;
@@ -40,18 +56,5 @@
     height: 45 px;
 }
 
-.prompt-box {
-    box-sizing: border-box;
-    border: 5px solid hsla(189, 84%, 81%, 0.997);
-    border-radius: 14px;
-    padding: 10px;
-    width: fit-content;
-    height: auto;
-    margin: 2px;
 
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-}
 
