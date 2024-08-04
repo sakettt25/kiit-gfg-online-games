@@ -7,7 +7,7 @@ function App() {
   if (choice == 1) {
     return (
       <>
-        <Header />
+        {/* <Header /> */}
         <TicTacToe />
       </>
     );
