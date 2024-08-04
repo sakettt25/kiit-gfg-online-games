@@ -7,7 +7,7 @@ function App() {
   if (choice == 1) {
     return (
       <>
-        {/* <Header /> */}
+        <Header text={"Tic Tac Toe"} />
         <TicTacToe />
       </>
     );
@@ -15,7 +15,7 @@ function App() {
   else {
     return (
       <>
-        <Header />
+        <Header text={"Mini Games"}/>
         <button onClick={() => setChoice(1)}> Play tic tac toe</button>
       </>
     );
