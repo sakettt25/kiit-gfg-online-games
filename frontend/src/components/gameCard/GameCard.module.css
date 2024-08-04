@@ -1,0 +1,44 @@
+.gameCard {
+    box-sizing: border-box;
+    width: 300px;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #535C91;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    
+}
+
+.gameCard > img{
+    width: 100%;
+    border-radius: 5px;
+}
+
+.gameCard > div{
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 6px;
+}
+
+.gameCard > div > img{
+    width: 10%;
+    height: auto;
+}
+
+
+/* .gameCard .banner-img {
+    width: 100%;
+    border: 100px;
+}
+
+
+
+.gameCard .cardDescription img{
+    width: 10%;
+    height: auto;
+} */
