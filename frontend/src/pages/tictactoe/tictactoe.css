@@ -9,6 +9,7 @@
 .prompt-box {
     box-sizing: border-box;
     border: 5px solid hsla(189, 84%, 81%, 0.997);
+    background-color: white;
     border-radius: 14px;
     padding: 10px;
     width: fit-content;
@@ -32,7 +33,7 @@
     background-color: hsla(189, 84%, 81%, 0.997);
     margin: 10px auto;
     padding: 20px;
-    width: 350px;
+    width: 320px;
     aspect-ratio: 1;
     border-radius: 20px;
 }
