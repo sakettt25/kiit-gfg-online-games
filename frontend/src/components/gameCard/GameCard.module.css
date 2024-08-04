@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+
 .gameCard {
     box-sizing: border-box;
-    width: 300px;
+    width: 350px;
     margin: 10px;
     padding: 5px;
     border-radius: 5px;
@@ -9,27 +11,31 @@
     display: flex;
     flex-direction: column;
     font-family: sans-serif;
-    
+
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
 }
 
-.gameCard:hover{
+.gameCard:hover {
     border: 2px solid white;
 }
 
-.gameCard > img{
+.gameCard>img {
     width: 100%;
     border-radius: 5px;
 }
 
-.gameCard > div{
-    
+.gameCard>div {
+
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 6px;
 }
 
-.gameCard > div > img{
+.gameCard>div>img {
     width: 10%;
     height: auto;
 }
