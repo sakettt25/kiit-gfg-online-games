@@ -20,7 +20,6 @@ function App() {
     return (
       <>
         <Header text={"Mini Games"} onImgClick={() => setChoice(0)} />
-        {/* <button onClick={() => setChoice(1)}> Play tic tac toe</button> */}
         <div className="cardList">
           <GameCard onCardClick={() => setChoice(1)} imgPath = {"src/assets/tictactoe-banner.png"}gameName={"Tic Tac Toe"} playerCount={2} gameDuration={"1 min."} />
           <GameCard className = "fakeCard" gameName={"Game Name"} imgPath = {"src/assets/placeholder-banner.jpg"}playerCount={4} gameDuration={"5 min."}/>
