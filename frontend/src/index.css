@@ -1,3 +1,23 @@
+/* SCROLLING BAR */
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Scroll bar code ends */
+
 body {
     margin: 0;
     background-color: #070F2B;
