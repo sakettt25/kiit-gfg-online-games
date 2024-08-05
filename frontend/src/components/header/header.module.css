@@ -16,6 +16,7 @@
 .header img {
     width: clamp(75px,10vw,100px);
     height: auto;
+    cursor: pointer;
 }
 
 

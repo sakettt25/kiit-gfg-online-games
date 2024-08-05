@@ -51,6 +51,7 @@
     border-radius: 100px;
     width: 32%;
     aspect-ratio: 1;
+    cursor: pointer;
 }
 
 .board .square:hover {
