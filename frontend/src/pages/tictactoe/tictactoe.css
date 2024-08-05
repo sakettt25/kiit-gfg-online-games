@@ -33,7 +33,7 @@
     background-color: hsla(189, 84%, 81%, 0.997);
     margin: 10px auto;
     padding: 20px;
-    width: 320px;
+    width: 310px;
     aspect-ratio: 1;
     border-radius: 20px;
 }
@@ -64,9 +64,8 @@
     border-radius: 100px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 410px) {
     .board {
-        width: 85%;
-        margin: 10%;
+        width: 75%;
     }
 }
