@@ -21,19 +21,18 @@ function App() {
       <>
         <Header text={"Mini Games"} onImgClick={() => setChoice(0)} />
         <div className="cardList">
-          <GameCard onCardClick={() => setChoice(1)} imgPath = {"src/assets/tictactoe-banner.png"}gameName={"Tic Tac Toe"} playerCount={2} gameDuration={"1 min."} />
-          <GameCard className = "fakeCard" gameName={"Game Name"} imgPath = {"src/assets/placeholder-banner.jpg"}playerCount={4} gameDuration={"5 min."}/>
-          <GameCard className = "fakeCard" gameName={"Game Name"} imgPath = {"src/assets/placeholder-banner.jpg"}playerCount={4} gameDuration={"5 min."}/>
-          <GameCard className = "fakeCard" gameName={"Game Name"} imgPath = {"src/assets/placeholder-banner.jpg"}playerCount={4} gameDuration={"5 min."}/>
-          <GameCard className = "fakeCard" gameName={"Game Name"} imgPath = {"src/assets/placeholder-banner.jpg"}playerCount={4} gameDuration={"5 min."}/>
-          <GameCard className = "fakeCard" gameName={"Game Name"} imgPath = {"src/assets/placeholder-banner.jpg"}playerCount={4} gameDuration={"5 min."}/>
-          <GameCard className = "fakeCard" gameName={"Game Name"} imgPath = {"src/assets/placeholder-banner.jpg"}playerCount={4} gameDuration={"5 min."}/>
-          <GameCard className = "fakeCard" gameName={"Game Name"} imgPath = {"src/assets/placeholder-banner.jpg"}playerCount={4} gameDuration={"5 min."}/>
-          <GameCard className = "fakeCard" gameName={"Game Name"} imgPath = {"src/assets/placeholder-banner.jpg"}playerCount={4} gameDuration={"5 min."}/>
-          <GameCard className = "fakeCard" gameName={"Game Name"} imgPath = {"src/assets/placeholder-banner.jpg"}playerCount={4} gameDuration={"5 min."}/>
-          <GameCard className = "fakeCard" gameName={"Game Name"} imgPath = {"src/assets/placeholder-banner.jpg"}playerCount={4} gameDuration={"5 min."}/>
-          
-           </div>
+          <GameCard onCardClick={() => setChoice(1)} imgPath={"src/assets/tictactoe-banner.png"} gameName={"Tic Tac Toe"} playerCount={2} gameDuration={"1 min."} />
+          <GameCard className="fakeCard" gameName={"Game Name"} imgPath={"src/assets/placeholder-banner.jpg"} playerCount={4} gameDuration={"5 min."} />
+          <GameCard className="fakeCard" gameName={"Game Name"} imgPath={"src/assets/placeholder-banner.jpg"} playerCount={4} gameDuration={"5 min."} />
+          <GameCard className="fakeCard" gameName={"Game Name"} imgPath={"src/assets/placeholder-banner.jpg"} playerCount={4} gameDuration={"5 min."} />
+          <GameCard className="fakeCard" gameName={"Game Name"} imgPath={"src/assets/placeholder-banner.jpg"} playerCount={4} gameDuration={"5 min."} />
+          <GameCard className="fakeCard" gameName={"Game Name"} imgPath={"src/assets/placeholder-banner.jpg"} playerCount={4} gameDuration={"5 min."} />
+          <GameCard className="fakeCard" gameName={"Game Name"} imgPath={"src/assets/placeholder-banner.jpg"} playerCount={4} gameDuration={"5 min."} />
+          <GameCard className="fakeCard" gameName={"Game Name"} imgPath={"src/assets/placeholder-banner.jpg"} playerCount={4} gameDuration={"5 min."} />
+          <GameCard className="fakeCard" gameName={"Game Name"} imgPath={"src/assets/placeholder-banner.jpg"} playerCount={4} gameDuration={"5 min."} />
+          <GameCard className="fakeCard" gameName={"Game Name"} imgPath={"src/assets/placeholder-banner.jpg"} playerCount={4} gameDuration={"5 min."} />
+          <GameCard className="fakeCard" gameName={"Game Name"} imgPath={"src/assets/placeholder-banner.jpg"} playerCount={4} gameDuration={"5 min."} />
+        </div>
       </>
     );
   }
