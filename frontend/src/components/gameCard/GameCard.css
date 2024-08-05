@@ -29,14 +29,22 @@
 }
 
 .gameCard>div {
-
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
+    gap: 5px;
     margin-top: 6px;
 }
 
-.gameCard>div>img {
-    width: 10%;
-    height: auto;
+.cardDescription img {
+    height : 60%;
+    width: auto;
+}
+
+.gameCard #gameName {
+    margin-right: auto;
+}
+
+.gameCard #timerIcon {
+    margin-left: 5%;
 }
