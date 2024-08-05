@@ -8,3 +8,8 @@ body {
     flex-wrap: wrap;
 }
 
+.cardList GameCard{
+    width: 25%;
+}
+
+

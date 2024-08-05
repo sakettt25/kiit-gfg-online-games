@@ -26,6 +26,14 @@ function App() {
           <GameCard className = "fakeCard" gameName={"Game Name"} imgPath = {"src/assets/placeholder-banner.jpg"}playerCount={4} gameDuration={"5 min."}/>
           <GameCard className = "fakeCard" gameName={"Game Name"} imgPath = {"src/assets/placeholder-banner.jpg"}playerCount={4} gameDuration={"5 min."}/>
           <GameCard className = "fakeCard" gameName={"Game Name"} imgPath = {"src/assets/placeholder-banner.jpg"}playerCount={4} gameDuration={"5 min."}/>
+          <GameCard className = "fakeCard" gameName={"Game Name"} imgPath = {"src/assets/placeholder-banner.jpg"}playerCount={4} gameDuration={"5 min."}/>
+          <GameCard className = "fakeCard" gameName={"Game Name"} imgPath = {"src/assets/placeholder-banner.jpg"}playerCount={4} gameDuration={"5 min."}/>
+          <GameCard className = "fakeCard" gameName={"Game Name"} imgPath = {"src/assets/placeholder-banner.jpg"}playerCount={4} gameDuration={"5 min."}/>
+          <GameCard className = "fakeCard" gameName={"Game Name"} imgPath = {"src/assets/placeholder-banner.jpg"}playerCount={4} gameDuration={"5 min."}/>
+          <GameCard className = "fakeCard" gameName={"Game Name"} imgPath = {"src/assets/placeholder-banner.jpg"}playerCount={4} gameDuration={"5 min."}/>
+          <GameCard className = "fakeCard" gameName={"Game Name"} imgPath = {"src/assets/placeholder-banner.jpg"}playerCount={4} gameDuration={"5 min."}/>
+          <GameCard className = "fakeCard" gameName={"Game Name"} imgPath = {"src/assets/placeholder-banner.jpg"}playerCount={4} gameDuration={"5 min."}/>
+          
            </div>
       </>
     );
