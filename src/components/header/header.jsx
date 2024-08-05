@@ -2,7 +2,7 @@ import styles from './header.module.css'
 function Header({ text, onImgClick }) {
     return (
         <div className={styles.header}>
-            <img src="src/assets/online game logo.png" alt="" onClick={onImgClick} />
+            <img src="src/assets/images/online game logo.png" alt="" onClick={onImgClick} />
             <h1 className="title">{text}</h1>
             <ul>
                 <li>About</li>
