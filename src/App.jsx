@@ -21,7 +21,7 @@ function App() {
       <>
         <Header text={"Mini Games"} onImgClick={() => setChoice(0)} />
         <div className="cardList">
-          <GameCard onCardClick={() => setChoice(1)} imgPath={"src/assets/images/banners/tictactoe-banner.png"} gameName={"Tic Tac Toe"} playerCount={2} gameDuration={"1 min."} />
+          <GameCard onCardClick={() => setChoice(1)} imgPath={"https://img.icons8.com/?size=100&id=VPhTpNuoUQoj&format=png&color=000000"} gameName={"Tic Tac Toe"} playerCount={2} gameDuration={"1 min."} />
           <GameCard gameName={"Battleship"} imgPath={"src/assets/images/banners/battleship banner.jpg"} playerCount={2} gameDuration={"20 min."} />
           <GameCard gameName={"Connect 4"} imgPath={"src/assets/images/banners/connect 4 banner.jpg"} playerCount={2} gameDuration={"15 min."} />
           <GameCard gameName={"Ludo"} imgPath={"src/assets/images/banners/ludo banner-cropped.jpg"} playerCount={4} gameDuration={"45 min."} />
