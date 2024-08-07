@@ -89,7 +89,7 @@ function Board() {
             </div>
 
         </div>
-        <ResetButton src={"src/assets/images/restart icon.png"} alt={"reset"} onClick={() => resetGame()} />
+        <ResetButton src={"../../images/restart icon.png"} alt={"reset"} onClick={() => resetGame()} />
     </div>);
 }
 export default Board
