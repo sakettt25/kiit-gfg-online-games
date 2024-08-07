@@ -11,6 +11,8 @@
     font-weight: 400;
     font-style: normal;
     margin-bottom: 30px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 
 .header img {
