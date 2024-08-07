@@ -9,12 +9,12 @@ function GameCard({ onCardClick, imgPath, gameName, playerCount, gameDuration })
 
                 <span id='gameName'>{gameName} </span>
 
-                <img src="src/assets/images/players-icon.svg" alt="" />
+                <img src="../../images/players-icon.svg" alt="" />
                 <span > {playerCount} </span>
 
 
 
-                <img id= 'timerIcon'src="src/assets/images/timer-icon.svg" alt="" />
+                <img id='timerIcon' src="../../images/timer-icon.svg" alt="" />
                 <span>{gameDuration}</span>
 
             </div>
