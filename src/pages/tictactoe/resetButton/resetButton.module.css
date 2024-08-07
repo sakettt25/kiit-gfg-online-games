@@ -2,7 +2,7 @@
 .spinResetButton {
     border: none;
     box-sizing: border-box;
-    background-color: hsla(189, 84%, 81%, 0.997);
+    background-color:hsla(224, 81%, 47%, 0.997);
     width: calc(45px + 2vw);
     height: auto;
     border-radius: 200px;

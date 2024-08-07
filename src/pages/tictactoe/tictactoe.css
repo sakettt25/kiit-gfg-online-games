@@ -9,7 +9,7 @@
 
 .prompt-box {
     box-sizing: border-box;
-    border: 5px solid hsla(189, 84%, 81%, 0.997);
+    border: 5px solid hsla(224, 81%, 47%, 0.997);
     background-color: white;
     border-radius: 14px;
     padding: 10px;
@@ -30,7 +30,7 @@
 }
 
 .board {
-    background-color: hsla(189, 84%, 81%, 0.997);
+    background-color: hsla(224, 81%, 47%, 0.997);
     margin: 10px auto;
     padding: 20px;
     width: 310px;
