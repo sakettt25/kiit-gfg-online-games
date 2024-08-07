@@ -1,7 +1,7 @@
 import TicTacToe from "./pages/tictactoe/tictactoe"
 import Header from "./components/header/header"
 import GameCard from "./components/gameCard/GameCard"
-import ludoBanner from "public/images/banners/ludo banner-cropped.jpg"
+import ludoBanner from "./public/images/banners/ludo banner-cropped.jpg"
 import { useState } from "react"
 function App() {
 
