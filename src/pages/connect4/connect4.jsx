@@ -1,6 +1,7 @@
 import './connect4.css'
 import C4tile from './C4tile';
 import { useState } from 'react';
+import ResetButton from './resetButton/resetButton'
 function Connect4() {
 
     const [tiles, setTile] = useState(Array(7).fill(Array(6).fill(null)));
@@ -177,8 +178,16 @@ function Connect4() {
 
     }
 
+    function resetGame() {
+        setTile(Array(7).fill(Array(6).fill(null)));
+        setPlayer(1);
+        setMessage("Turn of Red");
+        declareWinner(0);
+
+    }
+
     return (
-        <>
+        <div className='connect4'>
             <div className="prompt-box">{message} </div>
             <div className='c4board'>
 
@@ -240,7 +249,8 @@ function Connect4() {
                     <C4tile value={tiles[5][6]} />
                 </div>
             </div>
-        </>
+            <ResetButton src={"../../images/restart icon.png"} alt={"reset"} onClick={() => resetGame()} />
+        </div>
     );
 }
 export default Connect4;

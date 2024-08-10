@@ -6,7 +6,8 @@
     width: calc(45px + 2vw);
     height: auto;
     border-radius: 200px;
-    margin-top: 15px;
+    margin: 15px auto;
+
 }
 
 /* Ai generated code for spinning */
