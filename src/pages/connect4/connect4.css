@@ -7,14 +7,33 @@
     width: fit-content;
 }
 
-.column{
+.column {
     display: flex;
     flex-direction: column;
+    border: 2px solid hsla(0, 0%, 100%, 0);
 }
 
-.tile{
+.column:hover {
+    border-radius: 100px;
+    border: 2px solid white;
+    background-color: white;
+
+    .tile {
+        background-color: #070F2B;
+    }
+
+    .red {
+        background-color: red;
+    }
+}
+
+.tile {
     border: 2px solid white;
     padding: 30px;
     margin: 4px;
     border-radius: 200px;
+}
+
+.red {
+    background-color: red;
 }
