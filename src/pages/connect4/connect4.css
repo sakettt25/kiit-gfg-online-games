@@ -1,3 +1,21 @@
+.prompt-box {
+    box-sizing: border-box;
+    border: 5px solid hsla(224, 81%, 47%, 0.997);
+    background-color: white;
+    border-radius: 14px;
+    padding: 10px;
+    width: fit-content;
+    height: 50  px;
+    margin: 2px auto;
+
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    text-align: center;
+    align-self: center;
+}
+
 .c4board {
     padding: 10px;
     border: 2px solid white;
@@ -25,6 +43,10 @@
     .red {
         background-color: red;
     }
+
+    .yellow {
+        background-color: yellow;
+    }
 }
 
 .tile {
@@ -36,4 +58,8 @@
 
 .red {
     background-color: red;
+}
+
+.yellow {
+    background-color: yellow;
 }
