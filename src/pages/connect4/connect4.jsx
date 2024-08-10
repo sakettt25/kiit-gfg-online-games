@@ -6,9 +6,141 @@ function Connect4() {
     const [tiles, setTile] = useState(Array(7).fill(Array(6).fill(null)));
     const [player, setPlayer] = useState(1);
     const [message, setMessage] = useState("Turn of Red");
+    const [winner, declareWinner] = useState(0);
 
+    function row_freq(row, col, player) {
+        let count = 1;
+        for (let i = col + 1; i < 7; i++) // count to the right of the player
+        {
+            if (tiles[row][i] != player)
+                break;
+            count += 1;
+        }
+
+        for (let i = col - 1; i >= 0; i--) // counting to the left of player
+        {
+            if (tiles[row][i] != player)
+                break;
+            count += 1;
+        }
+        return count;
+    }
+
+    function col_freq(row, col, player) {
+
+        let count = 1;
+        for (let i = row + 1; i < 6; i++) // count below the player
+        {
+            if (tiles[i][col] != player)
+                break;
+            count += 1;
+        }
+
+        for (let i = row - 1; i >= 0; i--) // counting above the player
+        {
+            if (tiles[i][col] != player)
+                break;
+            count += 1;
+        }
+        return count;
+    }
+
+    function left_diagonal_freq(row, col, player) {
+        if ((row >= 3 && col <= 2) || (row <= 2 && col >= 4))
+            return 0;
+
+
+        let count = 1;
+        let i = row + 1;
+        let j = col + 1;
+        while (i < 6 && j < 7) // counting in bottom right direction
+        {
+            if (tiles[i][j] == player) {
+                count += 1;
+                i++;
+                j++;
+            }
+            else
+                break;
+        }
+
+        i = row - 1;
+        j = col - 1;
+
+        while (i >= 0 && j >= 0) // counting in top left direction
+        {
+            if (tiles[i][j] == player) {
+                count += 1;
+                i--;
+                j--;
+            }
+            else
+                break;
+        }
+        return count;
+    }
+
+    function right_diagonal_freq(row, col, player) {
+        if ((row <= 2 && col <= 2) || (row >= 3 && col >= 4))
+            return 0;
+
+        let count = 1;
+        let i = row + 1;
+        let j = col - 1;
+
+        while (i < 6 && j >= 0) // counting in bottom left direction
+        {
+            if (tiles[i][j] == player) {
+                count += 1;
+                i++;
+                j--;
+            }
+            else
+                break;
+        }
+
+
+        i = row - 1;
+        j = col + 1;
+
+        while (i >= 0 && j < 7) // counting in top right direction
+        {
+            if (tiles[i][j] == player) {
+                count += 1;
+                i--;
+                j++;
+            }
+            else
+                break;
+        }
+
+        return count;
+    }
+
+    function checkWin(row, col, player) {
+
+        let row_count = row_freq(row, col, player);
+        let col_count = col_freq(row, col, player);
+        let left_diag_count = left_diagonal_freq(row, col, player);
+        let right_diag_count = right_diagonal_freq(row, col, player);
+
+        if (row_count == 4 || col_count == 4 || left_diag_count == 4 || right_diag_count == 4) {
+            console.log("Row Count = " + row_count);
+            console.log("Column Count = " + col_count);
+            console.log("Left Diagonal Count = " + left_diag_count);
+            console.log("Right Diagonal Count = " + right_diag_count);
+            return true;
+        }
+        else
+            return false;
+
+
+    }
 
     function onColumnClick(colNumber) {
+        if (winner == 1)
+            return;
+
         let position = null;
         for (let i = 5; i >= 0; i--) {
             if (tiles[i][colNumber] == null) {
@@ -17,17 +149,32 @@ function Connect4() {
             }
         }
 
-        if (position == null)
+        if (position == null) {
+            setMessage("That Column is Full");
             return;
+        }
 
         const nextTiles = JSON.parse(JSON.stringify(tiles));
         nextTiles[position][colNumber] = player;
+        setTile(nextTiles);
+
+        let result = checkWin(position, colNumber, player);
+
+        if (result == true) {
+            if (player == 1)
+                setMessage("Red Won");
+            else
+                setMessage("Yellow Won");
+            declareWinner(1);
+            return;
+        }
+
         if (player == -1)
             setMessage("Turn of Red");
         else
             setMessage("Turn of Yellow");
         setPlayer(player * (-1));
-        setTile(nextTiles);
+
     }
 
     return (
