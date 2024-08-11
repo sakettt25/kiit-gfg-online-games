@@ -1,6 +1,6 @@
 name: CI Pipeline
 
-on:
+on: 
   pull_request:
     branches:
       - main
@@ -18,35 +18,16 @@ jobs:
         with:
           node-version: '18'
 
-      # - name: Install backend dependencies
-      #   working-directory: ./backend
-      #   run: npm install
-
-      # - name: Build backend
-      #   working-directory: ./backend
-      #   env:
-      #     DB_URL: ${{ secrets.DB_URL }}
-      #   run: npm run build
-
       - name: Install frontend dependencies
-        working-directory: ./frontend
         run: npm install
 
+      # - name: Run ESLint
+      #   run: npx eslint . --ext .js,.jsx,.ts,.tsx
+
       - name: Build frontend
-        working-directory: ./frontend
         run: npm run build
 
-      # - name: Test backend server start
-      #   working-directory: ./backend
-      #   env:
-      #     DB_URL: ${{ secrets.DB_URL }}
-      #   run: |
-      #     npm run dev &
-      #     sleep 10 # Wait for the server to start
-      #     curl -f http://localhost:3000 # Change this to the actual port your server runs on
-
       - name: Test frontend server start
-        working-directory: ./frontend
         run: |
           npm run dev &
           sleep 10 # Wait for the server to start
