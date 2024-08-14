@@ -50,9 +50,7 @@ function App() {
           <GameCard
             onCardClick={() => setChoice(3)}
             gameName={"Chain Reaction"}
-            imgPath={
-              "https://cdn6.aptoide.com/imgs/7/5/0/750c52334329694041afb41dda16c4b3_feature_graphic.png"
-            }
+            imgPath={"../../images/banners/chain-reaction.png"}
             playerCount={2}
             gameDuration={"15 min."}
           />

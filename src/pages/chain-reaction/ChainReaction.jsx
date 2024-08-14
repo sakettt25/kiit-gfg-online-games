@@ -12,7 +12,12 @@ const ChainReaction = () => {
 
   const handleAtoms = (row, col) => {
     if (row >= 0 && row < size && col >= 0 && col < size) {
-      if (newBoard[row][col] < 3) {
+      let adjacent = 0;
+      if (row + 1 < size) adjacent++;
+      if (row - 1 >= 0) adjacent++;
+      if (col + 1 < size) adjacent++;
+      if (col - 1 >= 0) adjacent++;
+      if (newBoard[row][col] < adjacent - 1) {
         newBoard[row][col]++;
         return;
       }
