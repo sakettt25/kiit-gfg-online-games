@@ -4,15 +4,15 @@ const Atom = ({ count, player }) => {
   const images = [
     [
       "",
-      "src/pages/chain-reaction/single_1.png",
-      "src/pages/chain-reaction/double_1.png",
-      "src/pages/chain-reaction/triple_1.png",
+      "images/single_1.png",
+      "images/double_1.png",
+      "images/tripple_1.png",
     ],
     [
       "",
-      "src/pages/chain-reaction/single_2.png",
-      "src/pages/chain-reaction/double_2.png",
-      "src/pages/chain-reaction/triple_2.png",
+      "images/single_2.png",
+      "images/double_2.png",
+      "images/tripple_2.png",
     ],
   ];
 
