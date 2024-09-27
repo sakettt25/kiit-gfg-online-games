@@ -51,7 +51,7 @@ function App() {
             onCardClick={() => setChoice(3)}
             gameName={"Chain Reaction"}
             imgPath={"../../images/banners/chain-reaction.png"}
-            playerCount={2}
+            playerCount={4}
             gameDuration={"15 min."}
           />
           <GameCard
