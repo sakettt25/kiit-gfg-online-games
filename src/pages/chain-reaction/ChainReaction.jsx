@@ -6,10 +6,20 @@ import { IoPerson } from "react-icons/io5";
 import { Input } from "@nextui-org/input";
 
 const players = [
-  { name: "Red", played: false, color: "#ed3f3e", isPlaying: false },
-  { name: "Green", played: false, color: "#52be49", isPlaying: false },
-  { name: "Yellow", played: false, color: "#f59e0b", isPlaying: false },
-  { name: "Blue", played: false, color: "#3b82f6", isPlaying: false },
+  { name: "Red", played: false, border: "border-[#ed3f3e]", isPlaying: false },
+  {
+    name: "Green",
+    played: false,
+    border: "border-[#52be49]",
+    isPlaying: false,
+  },
+  {
+    name: "Yellow",
+    played: false,
+    border: "border-[#e5c500]",
+    isPlaying: false,
+  },
+  { name: "Blue", played: false, border: "border-[#04b5ff]", isPlaying: false },
 ];
 
 const ChainReaction = () => {
@@ -84,21 +94,20 @@ const ChainReaction = () => {
       if (index < playerCount) player.isPlaying = true;
       else player.isPlaying = false;
     });
-    console.log(players);
     setPlayable(false);
     setPlayer(1);
     setWinner(0);
   };
 
   return (
-    <div className="flex mx-auto container px-5 items-center justify-center">
+    <div className="flex mx-auto container px-5 items-center justify-center w-full h-full">
       <div className="flex flex-col justify-center items-center w-full gap-4 my-14">
         {isPlayable ? (
           <div className="flex flex-row items-center justify-center gap-6">
             {winner == 0 ? (
               <div
                 className={`flex items-center justify-center border-4 ${
-                  player == 1 ? "border-[#ed3f3e]" : "border-[#52be49]"
+                  players[player - 1].border
                 } bg-neutral-100 p-3 rounded-lg hover:scale-105 duration-150 transition-all ease-in-out select-none`}
               >
                 <h1 className="font-bold text-neutral-800 text-lg">{`Turn of ${
@@ -108,7 +117,7 @@ const ChainReaction = () => {
             ) : (
               <div
                 className={`flex items-center justify-center border-4 ${
-                  winner == 1 ? "border-[#ed3f3e]" : "border-[#52be49]"
+                  players[player - 1].border
                 } bg-neutral-100 p-3 rounded-lg hover:scale-105 duration-150 transition-all ease-in-out select-none`}
               >
                 <h1 className="font-bold text-neutral-800 text-lg">{`Winner is ${
@@ -117,13 +126,13 @@ const ChainReaction = () => {
               </div>
             )}
 
-            <div className="flex items-center justify-center border-4 border-blue-400 bg-neutral-100 p-3 rounded-lg duration-150 transition-all hover:scale-105 ease-in-out cursor-pointer group">
-              <IoMdRefresh
-                className="font-bold text-neutral-800 text-3xl group-hover:rotate-180 transition-all ease-in-out duration-300"
-                onClick={() => {
-                  setPlayerCount(2), initBoard();
-                }}
-              />
+            <div
+              className="flex items-center justify-center border-4 border-blue-400 bg-neutral-100 p-3 rounded-lg duration-150 transition-all hover:scale-105 ease-in-out cursor-pointer group"
+              onClick={() => {
+                setPlayerCount(2), initBoard();
+              }}
+            >
+              <IoMdRefresh className="font-bold text-neutral-800 text-3xl group-hover:rotate-180 transition-all ease-in-out duration-300" />
             </div>
           </div>
         ) : (
@@ -170,11 +179,7 @@ const ChainReaction = () => {
                 <div
                   key={col}
                   className={`flex border-2 ${
-                    isPlayable
-                      ? player == 1
-                        ? "border-[#ed3f3e]"
-                        : "border-[#52be49]"
-                      : "border-neutral-200"
+                    isPlayable ? players[player - 1].border : "neutral-800"
                   } bg-transparent aspect-square w-[10%] max-w-[55px] min-w-[35px] items-center justify-center cursor-pointer hover:border-white hover:shadow-md hover:shadow-white hover:scale-110 hover:border-4 transition-all ease-in-out duration-150 select-none`}
                   onClick={() => {
                     if (
@@ -192,10 +197,9 @@ const ChainReaction = () => {
                         }, 3000);
                         return;
                       }
-                      player =
-                        player < playerCount
-                          ? setPlayer(player + 1)
-                          : setPlayer((player + 1) % playerCount);
+                      player < playerCount
+                        ? setPlayer(player + 1)
+                        : setPlayer((player + 1) % playerCount);
                     }
                   }}
                 >
