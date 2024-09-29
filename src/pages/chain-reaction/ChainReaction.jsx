@@ -33,7 +33,6 @@ const ChainReaction = () => {
           .map(() => ({ atoms: 0, player: 0 }))
       )
   );
-  const newBoard = [...board];
 
   let [player, setPlayer] = useState(1);
   const [winner, setWinner] = useState(0);
@@ -50,18 +49,33 @@ const ChainReaction = () => {
       if (row - 1 >= 0) adjacent++;
       if (col + 1 < size) adjacent++;
       if (col - 1 >= 0) adjacent++;
+
+      const newBoard = [...board];
       if (newBoard[row][col].atoms < adjacent - 1) {
         newBoard[row][col].player = player;
         newBoard[row][col].atoms++;
         players[player - 1].played = true;
+        setBoard(newBoard);
+        if (checkWinner(player)) {
+          setWinner(player);
+          setTimeout(() => {
+            setPlayerCount(2);
+            initBoard();
+          }, 5000);
+          return;
+        }
         return;
       }
       newBoard[row][col].atoms = 0;
       newBoard[row][col].player = 0;
-      handleAtoms(row + 1, col, player);
-      handleAtoms(row - 1, col, player);
-      handleAtoms(row, col + 1, player);
-      handleAtoms(row, col - 1, player);
+      setBoard(newBoard);
+
+      setTimeout(() => {
+        handleAtoms(row + 1, col, player);
+        handleAtoms(row - 1, col, player);
+        handleAtoms(row, col + 1, player);
+        handleAtoms(row, col - 1, player);
+      }, 300);
     }
   };
 
@@ -117,11 +131,11 @@ const ChainReaction = () => {
             ) : (
               <div
                 className={`flex items-center justify-center border-4 ${
-                  players[player - 1].border
+                  players[winner - 1].border
                 } bg-neutral-100 p-3 rounded-lg hover:scale-105 duration-150 transition-all ease-in-out select-none`}
               >
                 <h1 className="font-bold text-neutral-800 text-lg">{`Winner is ${
-                  players[player - 1].name
+                  players[winner - 1].name
                 }!`}</h1>
               </div>
             )}
@@ -179,7 +193,11 @@ const ChainReaction = () => {
                 <div
                   key={col}
                   className={`flex border-2 ${
-                    isPlayable ? players[player - 1].border : "neutral-800"
+                    isPlayable
+                      ? winner != 0
+                        ? players[winner - 1].border
+                        : players[player - 1].border
+                      : "neutral-800"
                   } bg-transparent aspect-square w-[10%] max-w-[55px] min-w-[35px] items-center justify-center cursor-pointer hover:border-white hover:shadow-md hover:shadow-white hover:scale-110 hover:border-4 transition-all ease-in-out duration-150 select-none`}
                   onClick={() => {
                     if (
@@ -188,18 +206,11 @@ const ChainReaction = () => {
                         board[row][col].player == player)
                     ) {
                       handleAtoms(row, col, player);
-                      setBoard(newBoard);
-                      if (checkWinner(player)) {
-                        setWinner(player);
-                        setTimeout(() => {
-                          setPlayerCount(2);
-                          initBoard();
-                        }, 3000);
-                        return;
+                      if (winner == 0) {
+                        player < playerCount
+                          ? setPlayer(player + 1)
+                          : setPlayer((player + 1) % playerCount);
                       }
-                      player < playerCount
-                        ? setPlayer(player + 1)
-                        : setPlayer((player + 1) % playerCount);
                     }
                   }}
                 >
