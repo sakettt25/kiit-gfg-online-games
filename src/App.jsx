@@ -9,28 +9,28 @@ function App() {
 
   if (choice == 1) {
     return (
-      <>
+      <div className="min-h-screen">
         <Header text={"Tic Tac Toe"} onImgClick={() => setChoice(0)} />
         <TicTacToe />
-      </>
+      </div>
     );
   } else if (choice == 2) {
     return (
-      <>
+      <div className="min-h-screen">
         <Header text={"Connect 4"} onImgClick={() => setChoice(0)} />
         <Connect4 />
-      </>
+      </div>
     );
   } else if (choice == 3) {
     return (
-      <>
+      <div className="min-h-screen">
         <Header text={"Chain Reaction"} onImgClick={() => setChoice(0)} />
         <ChainReaction />
-      </>
+      </div>
     );
   } else {
     return (
-      <>
+      <div className="min-h-screen">
         <Header text={"Mini Games"} onImgClick={() => setChoice(0)} />
         <div className="cardList">
           <GameCard
@@ -117,7 +117,7 @@ function App() {
             gameDuration={"5 min."}
           />
         </div>
-      </>
+      </div>
     );
   }
 }

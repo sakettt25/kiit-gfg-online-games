@@ -115,7 +115,7 @@ const ChainReaction = () => {
 
   return (
     <div className="flex mx-auto container px-5 items-center justify-center w-full h-full">
-      <div className="flex flex-col justify-center items-center w-full gap-4 my-14">
+      <div className="flex flex-col justify-center items-center w-full gap-4 mb-20 mt-8">
         {isPlayable ? (
           <div className="flex flex-row items-center justify-center gap-6">
             {winner == 0 ? (
