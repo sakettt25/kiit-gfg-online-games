@@ -9,36 +9,30 @@ function App() {
 
   if (choice == 1) {
     return (
-      <div className="min-h-screen">
+      <div className="min-h-screen bg-[url('/images/background.jpeg')] bg-repeat bg-contain bg-left-top">
         <Header text={"Tic Tac Toe"} onImgClick={() => setChoice(0)} />
-        <div className="bg-[url('/images/background.jpeg')] bg-no-repeat bg-cover bg-left-top pt-[30px]">
-          <TicTacToe />
-        </div>
+        <TicTacToe />
       </div>
     );
   } else if (choice == 2) {
     return (
-      <div className="min-h-screen">
+      <div className="min-h-screen bg-[url('/images/background.jpeg')] bg-repeat bg-contain bg-left-top">
         <Header text={"Connect 4"} onImgClick={() => setChoice(0)} />
-        <div className="bg-[url('/images/background.jpeg')] bg-no-repeat bg-cover bg-left-top pt-[30px]">
-          <Connect4 />
-        </div>
+        <Connect4 />
       </div>
     );
   } else if (choice == 3) {
     return (
-      <div className="min-h-screen">
+      <div className="min-h-screen bg-[url('/images/background.jpeg')] bg-repeat bg-contain bg-left-top">
         <Header text={"Chain Reaction"} onImgClick={() => setChoice(0)} />
-        <div className="bg-[url('/images/background.jpeg')] bg-no-repeat bg-cover bg-left-top pt-[30px]">
-          <ChainReaction />
-        </div>
+        <ChainReaction />
       </div>
     );
   } else {
     return (
-      <div className="min-h-screen">
+      <div className="min-h-screen bg-[url('/images/background.jpeg')] bg-repeat bg-contain bg-left-top">
         <Header text={"Mini Games"} onImgClick={() => setChoice(0)} />
-        <div className="cardList bg-[url('/images/background.jpeg')] bg-no-repeat bg-cover bg-left-top pt-[30px]">
+        <div className="cardList">
           <GameCard
             onCardClick={() => setChoice(1)}
             imgPath={"../../images/banners/tictactoe-banner.png"}
