@@ -11,28 +11,34 @@ function App() {
     return (
       <div className="min-h-screen">
         <Header text={"Tic Tac Toe"} onImgClick={() => setChoice(0)} />
-        <TicTacToe />
+        <div className="bg-[url('/images/background.jpeg')] bg-no-repeat bg-cover bg-left-top pt-[30px]">
+          <TicTacToe />
+        </div>
       </div>
     );
   } else if (choice == 2) {
     return (
       <div className="min-h-screen">
         <Header text={"Connect 4"} onImgClick={() => setChoice(0)} />
-        <Connect4 />
+        <div className="bg-[url('/images/background.jpeg')] bg-no-repeat bg-cover bg-left-top pt-[30px]">
+          <Connect4 />
+        </div>
       </div>
     );
   } else if (choice == 3) {
     return (
       <div className="min-h-screen">
         <Header text={"Chain Reaction"} onImgClick={() => setChoice(0)} />
-        <ChainReaction />
+        <div className="bg-[url('/images/background.jpeg')] bg-no-repeat bg-cover bg-left-top pt-[30px]">
+          <ChainReaction />
+        </div>
       </div>
     );
   } else {
     return (
       <div className="min-h-screen">
         <Header text={"Mini Games"} onImgClick={() => setChoice(0)} />
-        <div className="cardList">
+        <div className="cardList bg-[url('/images/background.jpeg')] bg-no-repeat bg-cover bg-left-top pt-[30px]">
           <GameCard
             onCardClick={() => setChoice(1)}
             imgPath={"../../images/banners/tictactoe-banner.png"}
