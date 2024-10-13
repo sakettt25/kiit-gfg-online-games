@@ -198,7 +198,7 @@ const ChainReaction = () => {
                         ? players[winner - 1].border
                         : players[player - 1].border
                       : "neutral-800"
-                  } bg-transparent aspect-square w-[10%] max-w-[55px] min-w-[35px] items-center justify-center cursor-pointer hover:border-white hover:shadow-md hover:shadow-white hover:scale-110 hover:border-4 transition-all ease-in-out duration-150 select-none`}
+                  } bg-[#070f2b] aspect-square w-[10%] max-w-[55px] min-w-[35px] items-center justify-center cursor-pointer hover:border-white hover:shadow-md hover:shadow-white hover:scale-110 hover:border-4 transition-all ease-in-out duration-150 select-none`}
                   onClick={() => {
                     if (
                       isPlayable &&
