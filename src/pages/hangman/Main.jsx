@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Header } from './Header';
 import { Footer } from './Footer';
 import { ContentGraphics } from './MiddlePart';
 import { randomWord } from './RandomWords';
@@ -30,7 +29,7 @@ function Main() {
 
   return (
     <div className="flex flex-col h-screen">
-      <Header />
+      
       <main className="flex-grow flex flex-col sm:flex-row">
         <ContentGraphics
           noOfWrong={noOfWrong}
