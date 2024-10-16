@@ -1,6 +1,6 @@
 const categories = {
   Vegetables: ["carrot", "broccoli", "spinach", "potato", "tomato"],
-  Fruits: ["apple", "banana", "grape", "orange", "mango"],
+  Fruits: ["apple", "banana", "grape", "orange", "mango", "papaya"],
   FastFoods: ["burger", "pizza", "fries", "tacos", "hotdog"],
   ProgrammingLanguages: ["java", "c", "ruby", "python", "javascript"],
   Science: ["atom", "cell", "gene", "virus", "quasar"],
